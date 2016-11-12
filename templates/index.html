@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到首页</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+        <span>用户名:{{ request.user }}  </span><span style="color: #5cb85c"> 姓名：{{ request.user.userpro.name }} </span>
+    {% else %}
+        <span style="color: red">登录/注册 /<a href="/accounts/logout" >注销</a></span>
+    {% endif %}
+    <span style="color: red"><a href="/accounts/logout" style="color: red">注销</a></span>
+    <h1>欢迎来到首页</h1>
+</body>
+</html>
